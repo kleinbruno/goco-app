@@ -5,6 +5,7 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {HomeScreen} from './src/screens';
 import {colorPalette} from './src/colors';
 import {Icon} from './src/components';
+import {StyleSheet} from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,38 +15,45 @@ function getColor(focused) {
     : colorPalette.lightInactiveColor;
 }
 
+const styles = StyleSheet.create({
+  upsideDownAndMirrored: {
+    transform: [{rotate: '140deg'}, {scaleX: -1}],
+  },
+});
+
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
 
   return (
     <NavigationContainer>
       <Tab.Navigator
-        initialRouteName={'Home'}
+        initialRouteName={'GoCo'}
         screenOptions={{
           tabBarActiveTintColor: colorPalette.lightPrimaryColor,
           tabBarInactiveTintColor: colorPalette.lightInactiveColor,
-        }}
-        barStyle={{backgroundColor: colorPalette.white}}>
+          tabBarStyle: {backgroundColor: colorPalette.white},
+        }}>
         <Tab.Screen
-          name={'Home'}
+          name={'GoCo'}
           component={HomeScreen}
           options={{
             tabBarIcon: ({focused}) => (
               <Icon
-                iconName={'checkmark-done-sharp'}
+                iconName={'refresh'}
                 iconSize={25}
                 color={getColor(focused)}
+                style={styles.upsideDownAndMirrored}
               />
             ),
           }}
         />
         <Tab.Screen
-          name={'2'}
+          name={'Logout'}
           component={HomeScreen}
           options={{
             tabBarIcon: ({focused}) => (
               <Icon
-                iconName={'checkmark-done-sharp'}
+                iconName={'log-out'}
                 iconSize={25}
                 color={getColor(focused)}
               />
