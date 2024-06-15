@@ -1,9 +1,10 @@
 import React from 'react';
-import { useColorScheme } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { HomeScreen } from './src/screens';
-import { colorPalette } from './src/colors';
+import {useColorScheme} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import {HomeScreen} from './src/screens';
+import {colorPalette} from './src/colors';
+import {Icon} from './src/components';
 
 const Tab = createBottomTabNavigator();
 
@@ -28,28 +29,28 @@ function App() {
         <Tab.Screen
           name={'Home'}
           component={HomeScreen}
-          // options={{
-          //   tabBarIcon: ({ focused }) => (
-          //     <RealIcon
-          //       iconName={'checkmark-done-sharp'}
-          //       iconSize={25}
-          //       color={getColor(focused)}
-          //     />
-          //   ),
-          // }}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <Icon
+                iconName={'checkmark-done-sharp'}
+                iconSize={25}
+                color={getColor(focused)}
+              />
+            ),
+          }}
         />
         <Tab.Screen
           name={'2'}
           component={HomeScreen}
-          // options={{
-          //   tabBarIcon: ({ focused }) => (
-          //     <RealIcon
-          //       iconName={'checkmark-done-sharp'}
-          //       iconSize={25}
-          //       color={getColor(focused)}
-          //     />
-          //   ),
-          // }}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <Icon
+                iconName={'checkmark-done-sharp'}
+                iconSize={25}
+                color={getColor(focused)}
+              />
+            ),
+          }}
         />
       </Tab.Navigator>
     </NavigationContainer>
