@@ -40,7 +40,13 @@ export function Routes() {
         screenOptions={{
           tabBarActiveTintColor: selectedTheme.primaryColor,
           tabBarInactiveTintColor: selectedTheme.inactiveColor,
-          tabBarStyle: {backgroundColor: selectedTheme.backgroundColor},
+          tabBarStyle: {
+            backgroundColor: selectedTheme.footerAndHeaderBackgroundColor,
+          },
+          headerStyle: {
+            backgroundColor: selectedTheme.footerAndHeaderBackgroundColor,
+          },
+          headerTintColor: selectedTheme.text,
         }}>
         <Tab.Screen
           name={'GoCo'}
@@ -88,7 +94,7 @@ export function Routes() {
           options={{
             tabBarButton: () => (
               <Button
-                buttonColor={selectedTheme.backgroundColor}
+                buttonColor={selectedTheme.footerBackgroundColor}
                 iconColor={selectedTheme.red}
                 iconName="log-out"
                 onPress={() => Alert.alert('You clicked the button!')}

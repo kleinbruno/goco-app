@@ -6,6 +6,7 @@ export const ligthColorPalette = {
   text: '#000000',
   red: '#FF6B6B',
   placeHolderText: '#999999',
+  footerAndHeaderBackgroundColor: '#F0F0F0',
 };
 
 export const darkColorPalette = {
@@ -16,4 +17,5 @@ export const darkColorPalette = {
   text: '#FFFFFF',
   red: '#B22222',
   placeHolderText: '#CCCCCC',
+  footerAndHeaderBackgroundColor: '#333333',
 };
