@@ -1,5 +1,5 @@
 import React from 'react';
-import {useColorScheme} from 'react-native';
+import {useColorScheme, Alert} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {HomeScreen, LoginScreen} from './src/screens';
@@ -21,6 +21,10 @@ const styles = StyleSheet.create({
     transform: [{rotate: '140deg'}, {scaleX: -1}],
   },
 });
+
+const LogoutComponent = () => {
+  return null;
+};
 
 function App() {
   const isDarkMode = useColorScheme() === 'dark';
@@ -49,14 +53,28 @@ function App() {
           }}
         />
         <Tab.Screen
-          name={'Logout'}
+          name={'Settings'}
           component={LoginScreen}
           options={{
             tabBarIcon: ({focused}) => (
               <Icon
-                iconName={'log-out'}
+                iconName={'settings'}
                 iconSize={25}
                 color={getColor(focused)}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
+          name={'Logout'}
+          component={LogoutComponent}
+          options={{
+            tabBarButton: () => (
+              <Button
+                buttonColor={colorPalette.white}
+                iconColor={colorPalette.lightPrimaryColor}
+                iconName="log-out"
+                onPress={() => Alert.alert('You clicked the button!')}
               />
             ),
           }}
