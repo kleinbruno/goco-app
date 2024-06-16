@@ -22,7 +22,7 @@ export function LoginScreen({navigation}) {
         <TextInput
           style={style.input}
           placeholder="Email"
-          placeholderTextColor="#999"
+          placeholderTextColor={selectedTheme.placeHolderText}
           autoCapitalize="none"
           value={email}
           onChangeText={setEmail}
@@ -30,10 +30,11 @@ export function LoginScreen({navigation}) {
         <TextInput
           style={style.input}
           placeholder="Password"
-          placeholderTextColor="#999"
+          placeholderTextColor={selectedTheme.placeHolderText}
           autoCapitalize="none"
           value={password}
           onChangeText={setPassword}
+          secureTextEntry={true}
         />
       </View>
 

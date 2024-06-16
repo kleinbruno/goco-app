@@ -5,6 +5,7 @@ export const ligthColorPalette = {
   blackAndWhite: '#FFFFFF',
   text: '#000000',
   red: '#FF6B6B',
+  placeHolderText: '#999999',
 };
 
 export const darkColorPalette = {
@@ -14,4 +15,5 @@ export const darkColorPalette = {
   blackAndWhite: '#000000',
   text: '#FFFFFF',
   red: '#B22222',
+  placeHolderText: '#CCCCCC',
 };
