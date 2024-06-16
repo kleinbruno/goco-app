@@ -22,7 +22,6 @@ export function AuthenticationProvider({children}) {
   function login(email, password) {
     if (email === 'admin' && password === 'admin') {
       setFakeUser();
-      setIsSignedIn(true);
       return 'Success';
     } else {
       return 'Invalid credentials';

@@ -11,14 +11,14 @@ export function LoginScreen({navigation}) {
   const [password, setPassword] = useState('');
 
   const {selectedTheme} = useContext(ThemeContext);
-  const {login} = useContext(AuthenticationContext);
+  const {login, setIsSignedIn} = useContext(AuthenticationContext);
 
   const style = styles(selectedTheme);
 
   function loggingIntoTheSystem() {
     const result = login(email, password);
     if (result === 'Success') {
-      // navigation.navigate('Home');
+      setIsSignedIn(true);
     } else {
       Alert.alert(result);
     }
