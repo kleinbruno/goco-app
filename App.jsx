@@ -2,7 +2,7 @@ import React from 'react';
 import {useColorScheme, Alert} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen, LoginScreen} from './src/screens';
+import {HomeScreen, LoginScreen, ProfileScreen, SettingsScreen} from './src/screens';
 import {colorPalette} from './src/colors';
 import {Icon, Button} from './src/components';
 import {StyleSheet} from 'react-native';
@@ -53,8 +53,21 @@ function App() {
           }}
         />
         <Tab.Screen
+          name={'Profile'}
+          component={ProfileScreen}
+          options={{
+            tabBarIcon: ({focused}) => (
+              <Icon
+                iconName={'person'}
+                iconSize={25}
+                color={getColor(focused)}
+              />
+            ),
+          }}
+        />
+        <Tab.Screen
           name={'Settings'}
-          component={LoginScreen}
+          component={SettingsScreen}
           options={{
             tabBarIcon: ({focused}) => (
               <Icon
