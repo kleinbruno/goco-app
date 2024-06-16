@@ -15,7 +15,11 @@ export function Routes() {
     <NavigationContainer>
       <Stack.Navigator>
         {isSignedIn ? (
-          <Stack.Screen name="AppTabs" component={AppTabs} />
+          <Stack.Screen
+            name="AppTabs"
+            component={AppTabs}
+            options={{headerShown: false}}
+          />
         ) : (
           <Stack.Screen name="Login" component={LoginScreen} />
         )}
