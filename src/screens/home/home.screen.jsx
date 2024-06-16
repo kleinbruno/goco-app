@@ -1,10 +1,10 @@
 import {View} from 'react-native';
-import {WebView2} from '../../components';
+import {WebView} from '../../components';
 
 export function HomeScreen() {
   return (
     <View style={{flex: 1}}>
-      <WebView2 />
+      <WebView />
     </View>
   );
 }

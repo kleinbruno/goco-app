@@ -1,13 +1,14 @@
 import React from 'react';
-import {StyleSheet, View} from 'react-native';
-import {WebView} from 'react-native-webview';
+import {StyleSheet} from 'react-native';
+import {WebView as RNWebView} from 'react-native-webview';
 
-export const WebView2 = () => {
+export const WebView = () => {
   return (
-    <WebView
+    <RNWebView
       source={{uri: 'https://www.goco.io'}}
       style={styles.webview}
-      allowsInlineMediaPlayback={true}
+      allowsBackForwardNavigationGestures={true}
+      mediaPlaybackRequiresUserAction={true} // Solve the issue of video auto playng
     />
   );
 };
