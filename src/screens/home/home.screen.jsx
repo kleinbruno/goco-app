@@ -1,10 +1,10 @@
-import {Text, View} from 'react-native';
-import {Icon} from '../../components';
+import {View} from 'react-native';
+import {WebView2} from '../../components';
 
 export function HomeScreen() {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Teste</Text>
+    <View style={{flex: 1}}>
+      <WebView2 />
     </View>
   );
 }
