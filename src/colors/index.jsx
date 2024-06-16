@@ -1,1 +1,1 @@
-export { colorPalette } from './color-palette';
+export {ligthColorPalette, darkColorPalette} from './color-palette';

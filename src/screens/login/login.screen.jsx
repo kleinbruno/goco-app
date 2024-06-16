@@ -3,19 +3,24 @@ import {useState} from 'react';
 import {Text, View, TextInput, TouchableOpacity, StatusBar} from 'react-native';
 import {styles} from './login.styles';
 import {useContext} from 'react';
+import {ThemeContext} from '../../contexts';
 
 export function LoginScreen({navigation}) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  return (
-    <View style={styles.container}>
-      <StatusBar />
-      <Text style={styles.title}>Login</Text>
+  const {selectedTheme} = useContext(ThemeContext);
 
-      <View style={styles.inputArea}>
+  const style = styles(selectedTheme);
+
+  return (
+    <View style={style.container}>
+      <StatusBar />
+      <Text style={style.title}>Login</Text>
+
+      <View style={style.inputArea}>
         <TextInput
-          style={styles.input}
+          style={style.input}
           placeholder="Email"
           placeholderTextColor="#999"
           autoCapitalize="none"
@@ -23,7 +28,7 @@ export function LoginScreen({navigation}) {
           onChangeText={setEmail}
         />
         <TextInput
-          style={styles.input}
+          style={style.input}
           placeholder="Password"
           placeholderTextColor="#999"
           autoCapitalize="none"
@@ -32,8 +37,8 @@ export function LoginScreen({navigation}) {
         />
       </View>
 
-      <TouchableOpacity style={styles.button} onPress={() => {}}>
-        <Text style={styles.buttonText}>Enter</Text>
+      <TouchableOpacity style={style.button} onPress={() => {}}>
+        <Text style={style.buttonText}>Enter</Text>
       </TouchableOpacity>
     </View>
   );

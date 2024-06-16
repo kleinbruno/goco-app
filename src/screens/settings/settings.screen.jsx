@@ -2,22 +2,22 @@ import React from 'react';
 import {Text, View, Switch} from 'react-native';
 import {styles} from './settings.styles';
 import {useContext} from 'react';
-import {ThemaContext} from '../../contexts';
+import {ThemeContext} from '../../contexts';
 
 export function SettingsScreen({navigation}) {
-  const {thema, setThema} = useContext(ThemaContext);
+  const {theme, setTheme, selectedTheme} = useContext(ThemeContext);
+
+  const style = styles(selectedTheme);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Settings</Text>
-
-      <View style={styles.inputArea}>
-        <Text style={styles.subtitle}>Theme: {thema} mode</Text>
+    <View style={style.container}>
+      <View style={style.inputArea}>
+        <Text style={style.subtitle}>Theme: {theme} mode</Text>
         <Switch
           onValueChange={() =>
-            thema === 'light' ? setThema('dark') : setThema('light')
+            theme === 'light' ? setTheme('dark') : setTheme('light')
           }
-          value={thema === 'light' ? true : false}
+          value={theme === 'light' ? true : false}
         />
       </View>
     </View>

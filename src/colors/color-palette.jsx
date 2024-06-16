@@ -1,10 +1,17 @@
-export const colorPalette = {
-  lightPrimaryColor: '#00C06C',
-  darkPrimaryColor: '#FFD700',
-  lightInactiveColor: '#9DA8C3',
-  darkInactiveColor: '#AEB7D6',
-  white: '#FFFFFF',
-  black: '#000000',
-  waterBlue: '#4166F5',
-  red: '#FF0000',
+export const ligthColorPalette = {
+  primaryColor: '#00C06C',
+  inactiveColor: '#9DA8C3',
+  backgroundColor: '#FFFFFF',
+  blackAndWhite: '#FFFFFF',
+  text: '#000000',
+  red: '#FF6B6B',
+};
+
+export const darkColorPalette = {
+  primaryColor: '#00994C',
+  inactiveColor: '#AEB7D6',
+  backgroundColor: '#1C1C1C',
+  blackAndWhite: '#000000',
+  text: '#FFFFFF',
+  red: '#B22222',
 };

@@ -2,17 +2,21 @@ import React from 'react';
 import {Alert} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen, ProfileScreen, SettingsScreen, LoginScreen} from '../screens';
-import {colorPalette} from '../colors';
+import {
+  HomeScreen,
+  ProfileScreen,
+  SettingsScreen,
+  LoginScreen,
+} from '../screens';
 import {Icon, Button} from '../components';
 import {StyleSheet} from 'react-native';
+import {useContext} from 'react';
+import {ThemeContext} from '../contexts';
 
 const Tab = createBottomTabNavigator();
 
-function getColor(focused) {
-  return focused
-    ? colorPalette.lightPrimaryColor
-    : colorPalette.lightInactiveColor;
+function getColor(focused, selectedTheme) {
+  return focused ? selectedTheme.primaryColor : selectedTheme.inactiveColor;
 }
 
 // just a trick to use the refresh icon like a GoCo logo
@@ -27,14 +31,16 @@ const LogoutComponent = () => {
 };
 
 export function Routes() {
+  const {selectedTheme} = useContext(ThemeContext);
+
   return (
     <NavigationContainer>
       <Tab.Navigator
         initialRouteName={'GoCo'}
         screenOptions={{
-          tabBarActiveTintColor: colorPalette.lightPrimaryColor,
-          tabBarInactiveTintColor: colorPalette.lightInactiveColor,
-          tabBarStyle: {backgroundColor: colorPalette.white},
+          tabBarActiveTintColor: selectedTheme.primaryColor,
+          tabBarInactiveTintColor: selectedTheme.inactiveColor,
+          tabBarStyle: {backgroundColor: selectedTheme.backgroundColor},
         }}>
         <Tab.Screen
           name={'GoCo'}
@@ -44,7 +50,7 @@ export function Routes() {
               <Icon
                 iconName={'refresh'}
                 iconSize={25}
-                color={getColor(focused)}
+                color={getColor(focused, selectedTheme)}
                 style={styles.upsideDownAndMirrored}
               />
             ),
@@ -58,7 +64,7 @@ export function Routes() {
               <Icon
                 iconName={'person'}
                 iconSize={25}
-                color={getColor(focused)}
+                color={getColor(focused, selectedTheme)}
               />
             ),
           }}
@@ -71,7 +77,7 @@ export function Routes() {
               <Icon
                 iconName={'settings'}
                 iconSize={25}
-                color={getColor(focused)}
+                color={getColor(focused, selectedTheme)}
               />
             ),
           }}
@@ -82,8 +88,8 @@ export function Routes() {
           options={{
             tabBarButton: () => (
               <Button
-                buttonColor={colorPalette.white}
-                iconColor={colorPalette.red}
+                buttonColor={selectedTheme.backgroundColor}
+                iconColor={selectedTheme.red}
                 iconName="log-out"
                 onPress={() => Alert.alert('You clicked the button!')}
               />
