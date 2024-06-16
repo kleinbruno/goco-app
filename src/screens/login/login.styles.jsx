@@ -12,7 +12,6 @@ export const styles = theme => {
       fontSize: 25,
       fontWeight: 'bold',
       color: theme.primaryColor,
-      marginBottom: 20,
     },
     inputArea: {
       height: 200,
@@ -44,6 +43,14 @@ export const styles = theme => {
       fontSize: 18,
       fontWeight: '400',
       color: theme.text,
+    },
+    upsideDownAndMirrored: {
+      transform: [{rotate: '140deg'}, {scaleX: -1}],
+      marginTop: 5,
+    },
+    row: {
+      flexDirection: 'row',
+      alignItems: 'center',
     },
   });
 };

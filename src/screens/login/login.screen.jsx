@@ -4,6 +4,7 @@ import {Text, View, TextInput, TouchableOpacity, StatusBar} from 'react-native';
 import {styles} from './login.styles';
 import {useContext} from 'react';
 import {ThemeContext} from '../../contexts';
+import {Icon} from '../../components';
 
 export function LoginScreen({navigation}) {
   const [email, setEmail] = useState('');
@@ -15,8 +16,15 @@ export function LoginScreen({navigation}) {
 
   return (
     <View style={style.container}>
-      <StatusBar />
-      <Text style={style.title}>Login</Text>
+      <View style={style.row}>
+        <Text style={style.title}>Login GoCo</Text>
+        <Icon
+          iconName={'refresh'}
+          iconSize={23}
+          color={selectedTheme.primaryColor}
+          style={style.upsideDownAndMirrored}
+        />
+      </View>
 
       <View style={style.inputArea}>
         <TextInput
