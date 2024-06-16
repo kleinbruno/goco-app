@@ -2,9 +2,9 @@ import React from 'react';
 import {useColorScheme} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen} from './src/screens';
+import {HomeScreen, LoginScreen} from './src/screens';
 import {colorPalette} from './src/colors';
-import {Icon} from './src/components';
+import {Icon, Button} from './src/components';
 import {StyleSheet} from 'react-native';
 
 const Tab = createBottomTabNavigator();
@@ -15,6 +15,7 @@ function getColor(focused) {
     : colorPalette.lightInactiveColor;
 }
 
+// just a trick to use the refresh icon like a GoCo logo
 const styles = StyleSheet.create({
   upsideDownAndMirrored: {
     transform: [{rotate: '140deg'}, {scaleX: -1}],
@@ -49,7 +50,7 @@ function App() {
         />
         <Tab.Screen
           name={'Logout'}
-          component={HomeScreen}
+          component={LoginScreen}
           options={{
             tabBarIcon: ({focused}) => (
               <Icon
