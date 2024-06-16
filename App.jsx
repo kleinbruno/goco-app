@@ -1,11 +1,13 @@
 import React from 'react';
 import {Routes} from './src/routes';
-import {ThemeProvider} from './src/contexts';
+import {ThemeProvider, AuthenticationProvider} from './src/contexts';
 
 function App() {
   return (
     <ThemeProvider>
-      <Routes />
+      <AuthenticationProvider>
+        <Routes />
+      </AuthenticationProvider>
     </ThemeProvider>
   );
 }

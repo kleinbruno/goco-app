@@ -1,9 +1,9 @@
 import React from 'react';
 import {useState} from 'react';
-import {Text, View, TextInput, TouchableOpacity, StatusBar} from 'react-native';
+import {Text, View, TextInput, TouchableOpacity, Alert} from 'react-native';
 import {styles} from './login.styles';
 import {useContext} from 'react';
-import {ThemeContext} from '../../contexts';
+import {ThemeContext, AuthenticationContext} from '../../contexts';
 import {Icon} from '../../components';
 
 export function LoginScreen({navigation}) {
@@ -11,8 +11,18 @@ export function LoginScreen({navigation}) {
   const [password, setPassword] = useState('');
 
   const {selectedTheme} = useContext(ThemeContext);
+  const {login} = useContext(AuthenticationContext);
 
   const style = styles(selectedTheme);
+
+  function loggingIntoTheSystem() {
+    const result = login(email, password);
+    if (result === 'Success') {
+      // navigation.navigate('Home');
+    } else {
+      Alert.alert(result);
+    }
+  }
 
   return (
     <View style={style.container}>
@@ -46,7 +56,9 @@ export function LoginScreen({navigation}) {
         />
       </View>
 
-      <TouchableOpacity style={style.button} onPress={() => {}}>
+      <TouchableOpacity
+        style={style.button}
+        onPress={() => loggingIntoTheSystem()}>
         <Text style={style.buttonText}>Enter</Text>
       </TouchableOpacity>
     </View>
