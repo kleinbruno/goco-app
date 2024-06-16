@@ -25,12 +25,7 @@ export function Routes() {
           <Stack.Screen
             name="Login"
             component={LoginScreen}
-            options={{
-              headerStyle: {
-                backgroundColor: selectedTheme.footerAndHeaderBackgroundColor,
-              },
-              headerTintColor: selectedTheme.text,
-            }}
+            options={{headerShown: false}}
           />
         )}
       </Stack.Navigator>
