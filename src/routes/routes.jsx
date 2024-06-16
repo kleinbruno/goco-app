@@ -2,14 +2,15 @@ import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {LoginScreen} from '../screens';
 import {useContext} from 'react';
-import {AuthenticationContext} from '../contexts';
+import {ThemeContext, AuthenticationContext} from '../contexts';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {AppTabs} from './tabs';
+import {AppTabs} from './tabs/tabs';
 
 const Stack = createNativeStackNavigator();
 
 export function Routes() {
   const {isSignedIn} = useContext(AuthenticationContext);
+  const {selectedTheme} = useContext(ThemeContext);
 
   return (
     <NavigationContainer>
@@ -21,7 +22,16 @@ export function Routes() {
             options={{headerShown: false}}
           />
         ) : (
-          <Stack.Screen name="Login" component={LoginScreen} />
+          <Stack.Screen
+            name="Login"
+            component={LoginScreen}
+            options={{
+              headerStyle: {
+                backgroundColor: selectedTheme.footerAndHeaderBackgroundColor,
+              },
+              headerTintColor: selectedTheme.text,
+            }}
+          />
         )}
       </Stack.Navigator>
     </NavigationContainer>

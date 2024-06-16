@@ -1,23 +1,16 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen, ProfileScreen, SettingsScreen} from '../screens';
-import {Icon, Button, Alert} from '../components';
-import {StyleSheet} from 'react-native';
+import {HomeScreen, ProfileScreen, SettingsScreen} from '../../screens';
+import {Icon, Button, Alert} from '../../components';
+import {styles} from './tabs.styles';
 import {useContext} from 'react';
-import {ThemeContext, AuthenticationContext} from '../contexts';
+import {ThemeContext, AuthenticationContext} from '../../contexts';
 
 const Tab = createBottomTabNavigator();
 
 function getColor(focused, selectedTheme) {
   return focused ? selectedTheme.primaryColor : selectedTheme.inactiveColor;
 }
-
-// just a trick to use the refresh icon like a GoCo logo
-const styles = StyleSheet.create({
-  upsideDownAndMirrored: {
-    transform: [{rotate: '140deg'}, {scaleX: -1}],
-  },
-});
 
 const LogoutComponent = () => {
   return null;
