@@ -5,6 +5,7 @@ export const AuthenticationContext = createContext();
 
 export function AuthenticationProvider({children}) {
   const [user, setUser] = useState({});
+  const [isSignedIn, setIsSignedIn] = useState(false);
 
   function setFakeUser() {
     setUser({
@@ -21,6 +22,7 @@ export function AuthenticationProvider({children}) {
   function login(email, password) {
     if (email === 'admin' && password === 'admin') {
       setFakeUser();
+      setIsSignedIn(true);
       return 'Success';
     } else {
       return 'Invalid credentials';
@@ -28,7 +30,8 @@ export function AuthenticationProvider({children}) {
   }
 
   return (
-    <AuthenticationContext.Provider value={{user, login}}>
+    <AuthenticationContext.Provider
+      value={{user, login, isSignedIn, setIsSignedIn}}>
       {children}
     </AuthenticationContext.Provider>
   );
