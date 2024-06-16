@@ -2,7 +2,7 @@ import React from 'react';
 import {Alert} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {HomeScreen, ProfileScreen, SettingsScreen} from '../screens';
+import {HomeScreen, ProfileScreen, SettingsScreen, LoginScreen} from '../screens';
 import {colorPalette} from '../colors';
 import {Icon, Button} from '../components';
 import {StyleSheet} from 'react-native';
@@ -52,7 +52,7 @@ export function Routes() {
         />
         <Tab.Screen
           name={'Profile'}
-          component={ProfileScreen}
+          component={LoginScreen}
           options={{
             tabBarIcon: ({focused}) => (
               <Icon
