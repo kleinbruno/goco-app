@@ -4,9 +4,11 @@ import {WebView} from '../../components';
 import {styles} from './home.styles';
 
 export function HomeScreen() {
+  const GOCO_URL = 'https://goco.io/';
+
   return (
     <View style={styles.container}>
-      <WebView />
+      <WebView uri={GOCO_URL} />
     </View>
   );
 }

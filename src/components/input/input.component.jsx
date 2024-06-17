@@ -3,6 +3,7 @@ import {TextInput} from 'react-native';
 import {useContext} from 'react';
 import {ThemeContext} from '../../contexts';
 import {styles} from './input.styles';
+import PropTypes from 'prop-types';
 
 export const Input = ({
   placeholder,
@@ -27,4 +28,12 @@ export const Input = ({
       onSubmitEditing={onSubmitEditing}
     />
   );
+};
+
+Input.propTypes = {
+  value: PropTypes.string.isRequired,
+  onChangeText: PropTypes.func.isRequired,
+  placeholder: PropTypes.string,
+  secureTextEntry: PropTypes.bool,
+  onSubmitEditing: PropTypes.func,
 };

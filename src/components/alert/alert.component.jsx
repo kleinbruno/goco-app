@@ -1,5 +1,6 @@
 import {Alert as RNAlert} from 'react-native';
 import {commonTexts} from '../../translations/en';
+import PropTypes from 'prop-types';
 
 export const Alert = ({onPress, titleText, message}) => {
   RNAlert.alert(
@@ -16,4 +17,10 @@ export const Alert = ({onPress, titleText, message}) => {
     {cancelable: false},
   );
   return null;
+};
+
+Alert.propTypes = {
+  onPress: PropTypes.func.isRequired,
+  titleText: PropTypes.string.isRequired,
+  message: PropTypes.string.isRequired,
 };
