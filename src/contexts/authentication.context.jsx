@@ -11,13 +11,19 @@ export function AuthenticationProvider({children}) {
 
   function setFakeUser() {
     setUser({
-      name: 'Admin User',
-      email: 'admin@admin.com',
+      name: 'Bruno Klein',
+      email: 'brunoklein23@gmail.com',
       address: 'Admin Street, 123',
-      city: 'Admin City',
-      state: 'Admin State',
-      country: 'Admin Country',
-      phone: '123456789',
+      city: 'Novo Hamburgo',
+      state: 'Rio Grande do Sul',
+      country: 'Brazil',
+      phone: '+55 (51) 99880-1838',
+      profilePicture: 'https://via.placeholder.com/150',
+      bio: 'Over 8 years of experience in front-end development, specializing in React and React Native.',
+      socialMedia: {
+        twitter: 'https://twitter.com/admin',
+        linkedIn: 'https://www.linkedin.com/in/bruno-klein/',
+      },
     });
   }
 
