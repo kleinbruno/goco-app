@@ -4,6 +4,8 @@
 
 This project uses vanilla React Native (version 0.74.2) instead of a framework like Expo. This approach provides more flexibility and control over native code, which can be beneficial for certain types of applications. It was decided to proceed with JavaScript instead of TypeScript due to the available time for coding the application.
 
+Due to time constraints, the development focused only on iOS, as well as adjusting icons and the launch screen.
+
 ### Libraries and Tools Used
 - React Native Vector Icons: Used instead of images to keep the application lightweight.
 - Context API: Used for managing authentication and theme state.
