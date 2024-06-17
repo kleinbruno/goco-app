@@ -1,10 +1,10 @@
 import React from 'react';
 import {useState} from 'react';
-import {Text, View, TextInput, TouchableOpacity, Alert} from 'react-native';
+import {Text, View, TouchableOpacity, Alert} from 'react-native';
 import {styles} from './login.styles';
 import {useContext} from 'react';
 import {ThemeContext, AuthenticationContext} from '../../contexts';
-import {Icon} from '../../components';
+import {Icon, Input} from '../../components';
 import {loginTexts, commonTexts} from '../../translations/en';
 
 export function LoginScreen() {
@@ -38,20 +38,14 @@ export function LoginScreen() {
       </View>
 
       <View style={style.inputArea}>
-        <TextInput
-          style={style.input}
+        <Input
           placeholder={loginTexts.email}
-          placeholderTextColor={selectedTheme.placeHolderText}
-          autoCapitalize="none"
           value={email}
           onChangeText={setEmail}
           onSubmitEditing={loggingIntoTheSystem}
         />
-        <TextInput
-          style={style.input}
+        <Input
           placeholder={loginTexts.password}
-          placeholderTextColor={selectedTheme.placeHolderText}
-          autoCapitalize="none"
           value={password}
           onChangeText={setPassword}
           secureTextEntry={true}
