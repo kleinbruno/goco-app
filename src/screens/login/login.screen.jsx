@@ -45,6 +45,7 @@ export function LoginScreen() {
           autoCapitalize="none"
           value={email}
           onChangeText={setEmail}
+          onSubmitEditing={loggingIntoTheSystem}
         />
         <TextInput
           style={style.input}
@@ -54,6 +55,7 @@ export function LoginScreen() {
           value={password}
           onChangeText={setPassword}
           secureTextEntry={true}
+          onSubmitEditing={loggingIntoTheSystem}
         />
       </View>
 
