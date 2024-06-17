@@ -1,16 +1,10 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  Image,
-  TouchableOpacity,
-  Linking,
-} from 'react-native';
+import {View, Text, ScrollView, Image, Linking} from 'react-native';
 import {Button} from '../../components';
 import {useContext} from 'react';
 import {AuthenticationContext, ThemeContext} from '../../contexts';
 import {styles} from './profile.styles';
+import {loginTexts, profileTexts} from '../../translations/en';
 
 export const ProfileScreen = () => {
   const {user} = useContext(AuthenticationContext);
@@ -24,27 +18,27 @@ export const ProfileScreen = () => {
       <Text style={style.name}>{user.name}</Text>
       <Text style={style.bio}>{user.bio}</Text>
       <View style={style.infoContainer}>
-        <Text style={style.label}>Email:</Text>
+        <Text style={style.label}>{loginTexts.email}</Text>
         <Text style={style.info}>{user.email}</Text>
       </View>
       <View style={style.infoContainer}>
-        <Text style={style.label}>Address:</Text>
+        <Text style={style.label}>{profileTexts.address}</Text>
         <Text style={style.info}>{user.address}</Text>
       </View>
       <View style={style.infoContainer}>
-        <Text style={style.label}>City:</Text>
+        <Text style={style.label}>{profileTexts.city}</Text>
         <Text style={style.info}>{user.city}</Text>
       </View>
       <View style={style.infoContainer}>
-        <Text style={style.label}>State:</Text>
+        <Text style={style.label}>{profileTexts.state}</Text>
         <Text style={style.info}>{user.state}</Text>
       </View>
       <View style={style.infoContainer}>
-        <Text style={style.label}>Country:</Text>
+        <Text style={style.label}>{profileTexts.country}</Text>
         <Text style={style.info}>{user.country}</Text>
       </View>
       <View style={style.infoContainer}>
-        <Text style={style.label}>Phone:</Text>
+        <Text style={style.label}>{profileTexts.phone}</Text>
         <Text style={style.info}>{user.phone}</Text>
       </View>
       <View style={style.socialContainer}>

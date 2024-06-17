@@ -19,6 +19,11 @@ export const loginTexts = {
 
 export const profileTexts = {
   profile: 'Profile',
+  address: 'Address',
+  city: 'City',
+  state: 'State',
+  country: 'Country',
+  phone: 'Phone',
 };
 
 export const settingsTexts = {
