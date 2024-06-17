@@ -5,9 +5,9 @@ import {styles} from './login.styles';
 import {useContext} from 'react';
 import {ThemeContext, AuthenticationContext} from '../../contexts';
 import {Icon} from '../../components';
-import {loginTexts} from '../../translations/en';
+import {loginTexts, commonTexts} from '../../translations/en';
 
-export function LoginScreen({navigation}) {
+export function LoginScreen() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -18,7 +18,7 @@ export function LoginScreen({navigation}) {
 
   function loggingIntoTheSystem() {
     const result = login(email, password);
-    if (result === 'Success') { //usar enum
+    if (result === commonTexts.success) {
       setIsSignedIn(true);
     } else {
       Alert.alert(result);

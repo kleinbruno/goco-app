@@ -4,6 +4,7 @@ import {styles} from './settings.styles';
 import {useContext} from 'react';
 import {ThemeContext} from '../../contexts';
 import {settingsTexts} from '../../translations/en';
+import {themeEnum} from '../../enums';
 
 export function SettingsScreen() {
   const {theme, setTheme, selectedTheme} = useContext(ThemeContext);
@@ -18,10 +19,12 @@ export function SettingsScreen() {
             style.subtitle
           }>{`${settingsTexts.theme} ${theme} ${settingsTexts.mode}`}</Text>
         <Switch
-          onValueChange={
-            () => (theme === 'light' ? setTheme('dark') : setTheme('light')) //usar enum
+          onValueChange={() =>
+            theme === themeEnum.LIGHT
+              ? setTheme(themeEnum.DARK)
+              : setTheme(themeEnum.LIGHT)
           }
-          value={theme === 'light' ? true : false}
+          value={theme === themeEnum.LIGHT ? true : false}
         />
       </View>
     </View>

@@ -1,6 +1,7 @@
 import React from 'react';
 import {createContext, useState} from 'react';
 import {commonTexts, loginTexts} from '../translations/en';
+import {adminEnum} from '../enums';
 
 export const AuthenticationContext = createContext();
 
@@ -21,7 +22,7 @@ export function AuthenticationProvider({children}) {
   }
 
   function login(email, password) {
-    if (email === 'admin' && password === 'admin') { //usar enum
+    if (email === adminEnum.ADMIN && password === adminEnum.ADMIN) {
       setFakeUser();
       return commonTexts.success;
     } else {

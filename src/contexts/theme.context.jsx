@@ -1,11 +1,12 @@
 import React from 'react';
 import {createContext, useState} from 'react';
 import {ligthColorPalette, darkColorPalette} from '../colors';
+import {themeEnum} from '../enums';
 
 export const ThemeContext = createContext();
 
 export function ThemeProvider({children}) {
-  const [theme, setTheme] = useState('light'); // usar enum
+  const [theme, setTheme] = useState(themeEnum.LIGHT);
 
   const themes = {
     light: ligthColorPalette,
