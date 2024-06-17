@@ -14,6 +14,7 @@ export const loginTexts = {
   logoutMessage: 'Are you sure you want to logout?',
   invalidCredentials: 'Invalid credentials',
   enter: 'Enter',
+  loginCogo: 'Login GoCo',
 };
 
 export const profileTexts = {

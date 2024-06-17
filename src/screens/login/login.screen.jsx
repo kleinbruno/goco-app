@@ -28,7 +28,7 @@ export function LoginScreen() {
   return (
     <View style={style.container}>
       <View style={style.row}>
-        <Text style={style.title}>Login GoCo</Text>
+        <Text style={style.title}>{loginTexts.loginCogo}</Text>
         <Icon
           iconName={'refresh'}
           iconSize={23}
