@@ -24,7 +24,7 @@ export function SettingsScreen() {
               ? setTheme(themeEnum.DARK)
               : setTheme(themeEnum.LIGHT)
           }
-          value={theme === themeEnum.LIGHT ? true : false}
+          value={theme === themeEnum.LIGHT}
         />
       </View>
     </View>
