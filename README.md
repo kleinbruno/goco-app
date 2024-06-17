@@ -9,6 +9,7 @@ This project uses vanilla React Native (version 0.74.2) instead of a framework l
 - Context API: Used for managing authentication and theme state.
 - React Navigation: Used for creating the tab footer and handling navigation within the app.
 - React Native WebView: Used for displaying the company's website.
+- prop-types: Since we are using JS, it was decided to implement PropTypes to help with type checking and documentation of the props.
 
 ### Test User
 
