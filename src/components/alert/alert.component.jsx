@@ -1,4 +1,5 @@
 import {Alert as RNAlert} from 'react-native';
+import {commonTexts} from '../../translations/en';
 
 export const Alert = ({onPress, titleText, message}) => {
   RNAlert.alert(
@@ -6,11 +7,11 @@ export const Alert = ({onPress, titleText, message}) => {
     message,
     [
       {
-        text: 'Cancel',
+        text: commonTexts.cancel,
         onPress: () => {},
         style: 'cancel',
       },
-      {text: 'OK', onPress: onPress},
+      {text: commonTexts.ok, onPress: onPress},
     ],
     {cancelable: false},
   );

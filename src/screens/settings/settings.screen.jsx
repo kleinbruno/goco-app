@@ -3,8 +3,9 @@ import {Text, View, Switch} from 'react-native';
 import {styles} from './settings.styles';
 import {useContext} from 'react';
 import {ThemeContext} from '../../contexts';
+import {settingsTexts} from '../../translations/en';
 
-export function SettingsScreen({navigation}) {
+export function SettingsScreen() {
   const {theme, setTheme, selectedTheme} = useContext(ThemeContext);
 
   const style = styles(selectedTheme);
@@ -12,10 +13,13 @@ export function SettingsScreen({navigation}) {
   return (
     <View style={style.container}>
       <View style={style.inputArea}>
-        <Text style={style.subtitle}>Theme: {theme} mode</Text>
+        <Text
+          style={
+            style.subtitle
+          }>{`${settingsTexts.theme} ${theme} ${settingsTexts.mode}`}</Text>
         <Switch
-          onValueChange={() =>
-            theme === 'light' ? setTheme('dark') : setTheme('light')
+          onValueChange={
+            () => (theme === 'light' ? setTheme('dark') : setTheme('light')) //usar enum
           }
           value={theme === 'light' ? true : false}
         />

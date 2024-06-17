@@ -5,6 +5,12 @@ import {Icon, Button, Alert} from '../../components';
 import {styles} from './tabs.styles';
 import {useContext} from 'react';
 import {ThemeContext, AuthenticationContext} from '../../contexts';
+import {
+  loginTexts,
+  commonTexts,
+  profileTexts,
+  settingsTexts,
+} from '../../translations/en';
 
 const Tab = createBottomTabNavigator();
 
@@ -18,8 +24,8 @@ const LogoutComponent = () => {
 
 const showLogoutAlert = setIsSignedIn => {
   Alert({
-    titleText: 'Logout',
-    message: 'Are you sure you want to logout?',
+    titleText: loginTexts.logout,
+    message: loginTexts.logoutMessage,
     onPress: () => setIsSignedIn(false),
   });
 };
@@ -30,7 +36,7 @@ export function AppTabs() {
 
   return (
     <Tab.Navigator
-      initialRouteName={'GoCo'}
+      initialRouteName={commonTexts.GoCo}
       screenOptions={{
         tabBarActiveTintColor: selectedTheme.primaryColor,
         tabBarInactiveTintColor: selectedTheme.inactiveColor,
@@ -43,7 +49,7 @@ export function AppTabs() {
         headerTintColor: selectedTheme.text,
       }}>
       <Tab.Screen
-        name={'GoCo'}
+        name={commonTexts.GoCo}
         component={HomeScreen}
         options={{
           tabBarIcon: ({focused}) => (
@@ -57,7 +63,7 @@ export function AppTabs() {
         }}
       />
       <Tab.Screen
-        name={'Profile'}
+        name={profileTexts.profile}
         component={ProfileScreen}
         options={{
           tabBarIcon: ({focused}) => (
@@ -70,7 +76,7 @@ export function AppTabs() {
         }}
       />
       <Tab.Screen
-        name={'Settings'}
+        name={settingsTexts.settings}
         component={SettingsScreen}
         options={{
           tabBarIcon: ({focused}) => (
@@ -83,7 +89,7 @@ export function AppTabs() {
         }}
       />
       <Tab.Screen
-        name={'Logout'}
+        name={loginTexts.logout}
         component={LogoutComponent}
         options={{
           tabBarButton: () => (

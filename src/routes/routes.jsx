@@ -5,6 +5,7 @@ import {useContext} from 'react';
 import {AuthenticationContext} from '../contexts';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import {AppTabs} from './tabs/tabs';
+import {loginTexts, commonTexts} from '../translations/en';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,13 +17,13 @@ export function Routes() {
       <Stack.Navigator>
         {isSignedIn ? (
           <Stack.Screen
-            name="AppTabs"
+            name={commonTexts.appTabs}
             component={AppTabs}
             options={{headerShown: false}}
           />
         ) : (
           <Stack.Screen
-            name="Login"
+            name={loginTexts.login}
             component={LoginScreen}
             options={{headerShown: false}}
           />

@@ -5,6 +5,7 @@ import {styles} from './login.styles';
 import {useContext} from 'react';
 import {ThemeContext, AuthenticationContext} from '../../contexts';
 import {Icon} from '../../components';
+import {loginTexts} from '../../translations/en';
 
 export function LoginScreen({navigation}) {
   const [email, setEmail] = useState('');
@@ -17,7 +18,7 @@ export function LoginScreen({navigation}) {
 
   function loggingIntoTheSystem() {
     const result = login(email, password);
-    if (result === 'Success') {
+    if (result === 'Success') { //usar enum
       setIsSignedIn(true);
     } else {
       Alert.alert(result);
@@ -39,7 +40,7 @@ export function LoginScreen({navigation}) {
       <View style={style.inputArea}>
         <TextInput
           style={style.input}
-          placeholder="Email"
+          placeholder={loginTexts.email}
           placeholderTextColor={selectedTheme.placeHolderText}
           autoCapitalize="none"
           value={email}
@@ -47,7 +48,7 @@ export function LoginScreen({navigation}) {
         />
         <TextInput
           style={style.input}
-          placeholder="Password"
+          placeholder={loginTexts.password}
           placeholderTextColor={selectedTheme.placeHolderText}
           autoCapitalize="none"
           value={password}
@@ -59,7 +60,7 @@ export function LoginScreen({navigation}) {
       <TouchableOpacity
         style={style.button}
         onPress={() => loggingIntoTheSystem()}>
-        <Text style={style.buttonText}>Enter</Text>
+        <Text style={style.buttonText}>{loginTexts.enter}</Text>
       </TouchableOpacity>
     </View>
   );
