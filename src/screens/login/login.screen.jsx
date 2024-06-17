@@ -4,7 +4,7 @@ import {Text, View, TouchableOpacity, Alert} from 'react-native';
 import {styles} from './login.styles';
 import {useContext} from 'react';
 import {ThemeContext, AuthenticationContext} from '../../contexts';
-import {Icon, Input} from '../../components';
+import {Icon, Input, Button} from '../../components';
 import {loginTexts, commonTexts} from '../../translations/en';
 
 export function LoginScreen() {
@@ -53,11 +53,9 @@ export function LoginScreen() {
         />
       </View>
 
-      <TouchableOpacity
-        style={style.button}
-        onPress={() => loggingIntoTheSystem()}>
+      <Button style={style.button} onPress={() => loggingIntoTheSystem()}>
         <Text style={style.buttonText}>{loginTexts.enter}</Text>
-      </TouchableOpacity>
+      </Button>
     </View>
   );
 }
