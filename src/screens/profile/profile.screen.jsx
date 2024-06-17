@@ -49,12 +49,6 @@ export const ProfileScreen = () => {
       </View>
       <View style={style.socialContainer}>
         <Button
-          onPress={() => Linking.openURL(user.socialMedia.twitter)}
-          iconName="logo-twitter"
-          iconColor={selectedTheme.text}
-          buttonColor={selectedTheme.backgroundColor}
-        />
-        <Button
           onPress={() => Linking.openURL(user.socialMedia.linkedIn)}
           iconName="logo-linkedin"
           iconColor={selectedTheme.text}

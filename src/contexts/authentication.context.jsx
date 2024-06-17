@@ -22,7 +22,6 @@ export function AuthenticationProvider({children}) {
         'https://media.licdn.com/dms/image/D4D03AQF_sFR2ARoPug/profile-displayphoto-shrink_800_800/0/1714480328350?e=1724284800&v=beta&t=jyk8GLQRAoxHGgwBnlHPU12zev9w05nbtJaIhBqhCm0',
       bio: 'Over 8 years of experience in front-end development, specializing in React and React Native.',
       socialMedia: {
-        twitter: 'https://twitter.com/admin',
         linkedIn: 'https://www.linkedin.com/in/bruno-klein/',
       },
     });
