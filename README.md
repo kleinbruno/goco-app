@@ -59,6 +59,9 @@ Ensure you have the Android SDK installed and configured.
 
 1. **Install dependencies:**
 npm install
+cd ios
+Pod install
+
 
 2. **Start the Metro Server:**
 
