@@ -6,6 +6,8 @@ This project uses vanilla React Native (version 0.74.2) instead of a framework l
 
 Due to time constraints, the development focused only on iOS, as well as adjusting icons and the launch screen.
 
+Click to see a preview of the GoCo application
+
 [![GoCo APP](https://img.youtube.com/vi/WtnTk4smGKs/0.jpg)](https://www.youtube.com/watch?v=WtnTk4smGKs)
 
 ### Libraries and Tools Used
